@@ -3,12 +3,14 @@ package com.controller;
 import java.util.*;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.exception.InvalidFormatException;
+
 
 @Controller
 public class FirstController {
@@ -22,12 +24,15 @@ public class FirstController {
 	}
 	
 	
-	@RequestMapping("/sub")
-	public ModelAndView get(@RequestParam String list) 
+	@RequestMapping(value="/sub", method=RequestMethod.POST)
+	public ModelAndView get(@ModelAttribute("list") Listmodel l) 
 	{
-		String even="",odd="",nan="";
+	
 		
-		Map<String, String> map=new HashMap();
+		
+		String list=String.valueOf(l);
+		
+		
 		
 		if(list.contains(" ") || list.contains("."))
 		{
@@ -36,10 +41,29 @@ public class FirstController {
 		
 		return new ModelAndView("errorPage","data",e);
 		}
-		
-			
 		if(!list.isEmpty())
 		{
+		
+			HashMap<String, String> map=validate(list);
+				
+			return new ModelAndView("success","data",map);
+			
+		}
+		else
+		{
+			return new ModelAndView("first","data","Please enter valid value");
+		}
+		
+		
+	}
+
+
+	public  HashMap<String, String> validate(String list) {
+		
+		String even="",odd="",nan="";
+		
+		HashMap<String, String> map=new HashMap();
+		
 		
 		String listarr[]=list.split(",");
 		
@@ -87,17 +111,9 @@ public class FirstController {
 		map.put("Odd Number", odd);
 		map.put("Not a Number", nan);
 		
-		return new ModelAndView("success","data",map);
+		return map;
 		
-		}
-		else
-		{
-			
-			return new ModelAndView("first","data","Please enter valid value");
-			
-		}
-		
-		
+
 		
 	}
 	

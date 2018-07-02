@@ -50,6 +50,13 @@
 </dependency>
 
 
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.11</version>
+    <scope>test</scope>
+</dependency>
+
 
 
 
@@ -92,12 +99,6 @@
   </build>
   
    
-    <properties>
-   <timestamp>${maven.build.timestamp}</timestamp>
-   <maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
-</properties>
-  
-  
   
   
   

@@ -18,7 +18,7 @@
 
 <br><br>
 
-<form action="sub">
+<form action="sub" method="post">
 
 <h2> <font color="blue"> Enter List of Values : </font> </h2> <input type="text" name="list"> <br><br>
 
