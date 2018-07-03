@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" %>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,23 +8,27 @@
 </head>
 <body>
 
-<br>
-<br>
+	<br>
+	<br>
 
-<center>
+	<center>
 
 
-<h3><font color="red">  ${data }</font></h3>
+		<h3>
+			<font color="red"> ${data }</font>
+		</h3>
 
-<br><br>
+		<br>
+		<br>
 
-<form action="sub" method="post">
+		<form action="sub" method="post">
 
-<h2> <font color="blue"> Enter List of Values : </font> </h2> <input type="text" name="list"> <br><br>
+			<h2>
+				<font color="blue"> Enter List of Values : </font>
+			</h2>
+			<input type="text" name="list"> <br>
+			<br> <input type="submit">
 
-<input type="submit">
-
-</form>
-
+		</form>
 </body>
 </html>

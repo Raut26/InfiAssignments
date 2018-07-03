@@ -4,6 +4,10 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 
+/**
+ * Customized Exception class
+ *
+ */
 public class InvalidFormatException extends Exception{
 	
 	
