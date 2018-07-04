@@ -21,7 +21,7 @@
 		<br>
 		<br>
 
-		<form action="sub" method="post">
+		<form action="submit" method="post">
 
 			<h2>
 				<font color="blue"> Enter List of Values : </font>
@@ -30,5 +30,9 @@
 			<br> <input type="submit">
 
 		</form>
+		
+		<br><br>
+		
+		<a href="appinf" style="margin-left: 565px;" >Application Information</a>
 </body>
 </html>

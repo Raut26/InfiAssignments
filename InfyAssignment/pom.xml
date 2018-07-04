@@ -7,12 +7,55 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
+    <properties>
+        <timestamp>${maven.build.timestamp}</timestamp>
+        <maven.build.timestamp.format>dd-MM-yyyy HH:mm</maven.build.timestamp.format>
+    </properties>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+		<!-- <plugins>
+			<plugin>
+		      <groupId>org.springframework.boot</groupId>
+		      <artifactId>spring-boot-maven-plugin</artifactId>
+		      <configuration>
+		         <archive>
+		            <manifestEntries>
+		               <Implementation-Build>${timestamp}</Implementation-Build>
+		              <Implementation-Version>${project.version}</Implementation-Version>
+		            </manifestEntries>
+		         </archive>
+		      </configuration>
+		   </plugin> -->
+		
+		<!-- 
+		   <plugin>
+		      <groupId>org.apache.maven.plugins</groupId>
+		      <artifactId>maven-jar-plugin</artifactId>
+		      <configuration>
+		         <archive>
+		            <manifestEntries>
+		               <Implementation-Build>${timestamp}</Implementation-Build>
+		              <Implementation-Version>${project.version}</Implementation-Version>
+		            </manifestEntries>
+		         </archive>
+		      </configuration>
+		   </plugin>
+		   
+        </plugins>  -->
+    </build>
 
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.2.RELEASE</version>
+		<version>1.5.6.RELEASE</version>
+		<relativePath/>
 	</parent>
 
 
@@ -22,7 +65,10 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
@@ -34,8 +80,7 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
-			<version>1.2</version>
-		</dependency>
+			</dependency>
 
 		<dependency>
 			<groupId>org.scala-lang</groupId>
@@ -55,41 +100,14 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
 
-
-
-
 	</dependencies>
+	
+	
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>3.0.1</version>
-				<configuration>
-					<show>public</show>
-					<nohelp>true</nohelp>
-				</configuration>
-			</plugin>
-
-
-
-
-
-
-		</plugins>
-
-
-
-
-
-	</build>
-
-
+	
 
 
 
